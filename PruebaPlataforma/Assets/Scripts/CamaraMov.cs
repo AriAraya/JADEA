@@ -11,7 +11,11 @@ public class CamaraMov : MonoBehaviour
     {
         if (Input.GetKey("right"))
         {
-            gameObject.transform.Translate(((personaje.transform.position.x - posOriginal)+10) * Time.deltaTime, 0, 0);
+            gameObject.transform.Translate(((personaje.transform.position.x - posOriginal) + 21) * Time.deltaTime, 0, 0);
+        }
+        if (Input.GetKey("left"))
+        {
+            gameObject.transform.Translate(-1*(((personaje.transform.position.x - posOriginal) +21)) * Time.deltaTime, 0, 0);
         }
         posOriginal = personaje.transform.position.x;
     }

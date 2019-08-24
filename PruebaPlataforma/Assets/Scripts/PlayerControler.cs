@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
 {
-    bool canJump;
-    float limite=-50;
-    float diferencia=0;
-    
+    bool canJump;  
 
     // Update is called once per frame
     void Update()
     {
         
-        if (Input.GetKey("left") && gameObject.transform.position.x>limite)
+        if (Input.GetKey("left") )
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-5000f*Time.deltaTime,0));
+
             gameObject.GetComponent<Animator>().SetBool("moving", true);
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
