@@ -33,7 +33,13 @@ public class CambiarVidas : MonoBehaviour
         if (collision.transform.tag == "frog")
         {
             vidas -= 1;
-            
+
+            actualizarVidas();
+            regresarOrigen();
+        }
+        if (collision.transform.tag == "Trap")
+        {
+            vidas -= 1;
             actualizarVidas();
             regresarOrigen();
         }

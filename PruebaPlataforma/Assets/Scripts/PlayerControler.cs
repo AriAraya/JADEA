@@ -6,10 +6,11 @@ public class PlayerControler : MonoBehaviour
 {
     bool canJump;  
 
+
     // Update is called once per frame
     void Update()
     {
-        
+        transform.rotation = Quaternion.identity;
         if (Input.GetKey("left") )
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-5000f*Time.deltaTime,0));
