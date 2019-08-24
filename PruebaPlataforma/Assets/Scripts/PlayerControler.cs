@@ -13,15 +13,13 @@ public class PlayerControler : MonoBehaviour
         transform.rotation = Quaternion.identity;
         if (Input.GetKey("left") )
         {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-5000f*Time.deltaTime,0));
-
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-7000f*Time.deltaTime,0));
             gameObject.GetComponent<Animator>().SetBool("moving", true);
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
         if (Input.GetKey("right"))
         {
-           // diferencia = ;
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(5000f * Time.deltaTime, 0));
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(7000f * Time.deltaTime, 0));
             gameObject.GetComponent<Animator>().SetBool("moving", true);
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }

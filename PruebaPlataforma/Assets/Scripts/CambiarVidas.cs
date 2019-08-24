@@ -9,6 +9,9 @@ public class CambiarVidas : MonoBehaviour
     int vidas = 5;
     float posOriginalX;
     float posOriginalY;
+    public GameObject zarigueya;
+    float posOZX;
+    float posOZY;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +19,8 @@ public class CambiarVidas : MonoBehaviour
         actualizarVidas();
         posOriginalX = gameObject.transform.position.x;
         posOriginalY = gameObject.transform.position.y;
+        posOZX =zarigueya.transform.position.x;
+        posOZY =zarigueya.transform.position.y;
     }
 
 
@@ -26,6 +31,11 @@ public class CambiarVidas : MonoBehaviour
     private void regresarOrigen()
     {
         gameObject.GetComponent<Transform>().position = new Vector3(posOriginalX,posOriginalY,0);
+    }
+
+    private void regresarZarigueya()
+    {
+        zarigueya.GetComponent<Transform>().position = new Vector3(posOZX,posOZY,0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -42,6 +52,7 @@ public class CambiarVidas : MonoBehaviour
             vidas -= 1;
             actualizarVidas();
             regresarOrigen();
+            regresarZarigueya();
         }
     }
 }

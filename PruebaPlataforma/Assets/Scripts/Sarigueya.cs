@@ -16,7 +16,7 @@ public class Sarigueya : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= 2f)
+        if (timer >= 5f)
         {
             timer = 0;
             velocidad += 10;
@@ -28,6 +28,10 @@ public class Sarigueya : MonoBehaviour
         if (collision.transform.tag == "Ground"|| collision.transform.tag == "Zorro")
         {
             canJump = true;
+            if (collision.transform.tag == "Zorro")
+            {
+                velocidad = 1000;
+            }
         }
         else if (canJump)
         {
