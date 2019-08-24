@@ -10,13 +10,18 @@ public class CambiarVidas : MonoBehaviour
     public GameObject jugador;
     float posOriginalX;
     float posOriginalY;
+    public GameObject zarigueya;
+    float posOZX;
+    float posOZY;
 
     // Start is called before the first frame update
     void Start()
     {
         actualizarVidas();
-        posOriginalX= jugador.transform.position.x;
-        posOriginalY = jugador.transform.position.y;
+        posOriginalX = gameObject.transform.position.x;
+        posOriginalY = gameObject.transform.position.y;
+        posOZX =zarigueya.transform.position.x;
+        posOZY =zarigueya.transform.position.y;
     }
 
 
@@ -29,6 +34,11 @@ public class CambiarVidas : MonoBehaviour
         jugador.transform.Translate(posOriginalX,posOriginalY,0);
     }
 
+    private void regresarZarigueya()
+    {
+        zarigueya.GetComponent<Transform>().position = new Vector3(posOZX,posOZY,0);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "frog")
@@ -37,6 +47,7 @@ public class CambiarVidas : MonoBehaviour
             
             actualizarVidas();
             regresarOrigen();
+            regresarZarigueya();
         }
     }
 }

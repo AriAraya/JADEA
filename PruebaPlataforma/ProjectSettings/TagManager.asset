@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - frog
+  - enemigo
+  - Zorro
   layers:
   - Default
   - TransparentFX
