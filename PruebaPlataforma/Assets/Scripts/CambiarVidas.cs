@@ -40,20 +40,25 @@ public class CambiarVidas : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("hola");
+        
         if (collision.transform.tag == "frog")
         {
             vidas -= 1;
 
             actualizarVidas();
+            ScoreScript.scoreValue = 0;
             regresarOrigen();
+            regresarZarigueya();
+
         }
         if (collision.transform.tag == "Trap")
         {
             vidas -= 1;
             actualizarVidas();
             regresarOrigen();
+            ScoreScript.scoreValue = 0;
             regresarZarigueya();
+            
         }
     }
 }

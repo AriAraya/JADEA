@@ -19,9 +19,9 @@ public class Aguila : MonoBehaviour
         var pos = GameObject.Find("Personaje").transform.position;
         var pos2 = gameObject.transform.position;
         float prob = Random.Range(0.0f, 100.0f);
-        if (Mathf.Abs(pos.x - pos2.x) <= 30 && Mathf.Abs(pos.y-pos2.y) <= 30 && prob >= 60f)
+        if (Mathf.Abs(pos.x - pos2.x) <= 50 && Mathf.Abs(pos.y-pos2.y) <= 50 && prob >= 60f)
         {
-            float step = 100f * Time.deltaTime;
+            float step = 50f * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, pos, step);
         }
     }
