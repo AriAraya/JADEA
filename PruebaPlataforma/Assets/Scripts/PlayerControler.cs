@@ -7,6 +7,7 @@ public class PlayerControler : MonoBehaviour
     bool canJump;
     float limite=-50;
     float diferencia=0;
+    
 
     // Update is called once per frame
     void Update()
@@ -14,13 +15,14 @@ public class PlayerControler : MonoBehaviour
         
         if (Input.GetKey("left") && gameObject.transform.position.x>limite)
         {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1000f*Time.deltaTime,0));
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-5000f*Time.deltaTime,0));
             gameObject.GetComponent<Animator>().SetBool("moving", true);
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
         if (Input.GetKey("right"))
         {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(1000f * Time.deltaTime, 0));
+           // diferencia = ;
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(5000f * Time.deltaTime, 0));
             gameObject.GetComponent<Animator>().SetBool("moving", true);
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
@@ -32,7 +34,7 @@ public class PlayerControler : MonoBehaviour
         if (Input.GetKeyDown("up") && canJump)
         {
             canJump = false;
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1000f));
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 5000f));
         }
     }
 
