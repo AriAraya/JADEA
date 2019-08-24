@@ -36,6 +36,7 @@ public class CambiarVidas : MonoBehaviour
             
             actualizarVidas();
             regresarOrigen();
+            ScoreScript.scoreValue = 0;
         }
     }
 }
