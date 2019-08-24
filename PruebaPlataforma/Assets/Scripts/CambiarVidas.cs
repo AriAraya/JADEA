@@ -7,7 +7,6 @@ public class CambiarVidas : MonoBehaviour
 {
     public Text texto;
     int vidas = 5;
-    public GameObject jugador;
     float posOriginalX;
     float posOriginalY;
 
@@ -15,8 +14,8 @@ public class CambiarVidas : MonoBehaviour
     void Start()
     {
         actualizarVidas();
-        posOriginalX= jugador.transform.position.x;
-        posOriginalY = jugador.transform.position.y;
+        posOriginalX = gameObject.transform.position.x;
+        posOriginalY = gameObject.transform.position.y;
     }
 
 
@@ -26,7 +25,7 @@ public class CambiarVidas : MonoBehaviour
     }
     private void regresarOrigen()
     {
-        jugador.transform.Translate(posOriginalX,posOriginalY,0);
+        gameObject.GetComponent<Transform>().position = new Vector3(posOriginalX,posOriginalY,0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
