@@ -11,9 +11,15 @@ public class CamaraMov : MonoBehaviour
     {
         if (Input.GetKey("right"))
         {
-            gameObject.transform.Translate(((personaje.transform.position.x - posOriginal)+10) * Time.deltaTime, 0, 0);
+            gameObject.transform.Translate(((personaje.transform.position.x - posOriginal) + 31) * Time.deltaTime, 0, 0);
+            //gameObject.GetComponent<Transform>().position = new Vector3(-10,-10, 0);
+        }
+        if (Input.GetKey("left"))
+        {
+            gameObject.transform.Translate(-1*(((personaje.transform.position.x - posOriginal) +31)) * Time.deltaTime, 0, 0);
         }
         posOriginal = personaje.transform.position.x;
+        gameObject.GetComponent<Transform>().position = new Vector3(personaje.transform.position.x, personaje.transform.position.y, personaje.transform.position.z);
     }
 
 }
