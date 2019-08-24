@@ -40,6 +40,7 @@ public class CambiarVidas : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("hola");
         if (collision.transform.tag == "frog")
         {
             vidas -= 1;

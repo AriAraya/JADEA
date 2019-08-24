@@ -8,6 +8,7 @@ TagManager:
   - frog
   - enemigo
   - Zorro
+  - Trap
   layers:
   - Default
   - TransparentFX
